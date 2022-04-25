@@ -1,0 +1,32 @@
+ALTA DISPONIBILIDAD
+
+Salida del comando pcs status
+
+<pre>
+vagrant@nodo1:~$ sudo pcs status
+Cluster name: mycluster
+Cluster Summary:
+  * Stack: corosync
+  * Current DC: nodo1 (version 2.0.5-ba59be7122) - partition with quorum
+  * Last updated: Wed Feb 16 08:06:43 2022
+  * Last change:  Wed Feb 16 08:02:41 2022 by root via cibadmin on nodo1
+  * 2 nodes configured
+  * 5 resource instances configured
+
+Node List:
+  * Online: [ nodo1 nodo2 ]
+
+Full List of Resources:
+  * VirtualIP	(ocf::heartbeat:IPaddr2):	 Started nodo1
+  * WebSite	(ocf::heartbeat:apache):	 Started nodo1
+  * Clone Set: WebData-clone [WebData] (promotable):
+    * Masters: [ nodo1 ]
+    * Slaves: [ nodo2 ]
+  * WebFS	(ocf::heartbeat:Filesystem):	 Started nodo1
+
+Daemon Status:
+  corosync: active/enabled
+  pacemaker: active/enabled
+  pcsd: active/enabled
+
+</pre>
